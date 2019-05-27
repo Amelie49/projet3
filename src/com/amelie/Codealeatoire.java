@@ -9,14 +9,14 @@ public class Codealeatoire {
     public Integer code;
 
     static Configuration configuration = new Configuration();
-    static int longueurRandom = 10 ^ configuration.getLongueurJeu();
+    static int intervalRandom = (int) Math.pow (10,configuration.getLongueurJeu());
     int nbEssais = configuration.getNbEssais();
 
     /** Générer le code aléatoire en int
      */
     public int genererCodeAleatoire () {
         Random r = new Random();
-        code = r.nextInt(9999);
+        code = r.nextInt(intervalRandom);
         return code;
     }
 }

@@ -2,10 +2,10 @@ package com.amelie;
 
 import java.util.Scanner;
 
-public class Challenge {
+public class Challenge implements DeroulementJeu{
 
     static Configuration configuration = new Configuration();
-    static int longueurJeu = configuration.getLongueurJeu();
+    static int longueurnb = configuration.getLongueurJeu();
     int nbEssais = configuration.getNbEssais();
 
     /**
@@ -14,18 +14,18 @@ public class Challenge {
      */
 
 
-    public static void comparaison() {
+    public  void comparaison() {
         String choixJoueur;
         int nbJoueur;
         int longueurJoueur;
         int i;
-        int j;
+        int nbEssais;
         boolean vf;
         char reponse = ' ';
         String nbPC;
 
         do {
-            j=0;
+            nbEssais=0;
 
             Codealeatoire codealeatoire = new Codealeatoire();
             int nbRandom = codealeatoire.genererCodeAleatoire();
@@ -43,39 +43,39 @@ public class Challenge {
                         vf = Character.isDigit(choixJoueur.charAt(i));
 
                         if(vf==false) {
-                            System.out.print("Vous n'avez pas saisi un nombre");
+                            System.out.println("Vous n'avez pas saisi un nombre");
                         }else {
-                            System.out.print("");
+                            System.out.println("");
                         }
                     }
-                    while (vf == false && i++<longueurJeu);
+                    while (vf == false && i++<longueurnb);
 
                     /* si le joueur ne saisi pas un nombre à 4 chiffres*/
                     longueurJoueur = choixJoueur.length();
 
-                    if (longueurJoueur == longueurJeu) {
+                    if (longueurJoueur == longueurnb) {
                     }else {
                         System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
                         System.out.println(choixJoueur.length());
                     }
                 }
-                while(longueurJoueur!=longueurJeu);
+                while(longueurJoueur!=longueurnb);
 
                 nbPC = String.valueOf(nbRandom);
 
-                for (i=0;i< longueurJeu;i++) {
+                for (i=0;i< longueurnb;i++) {
 
                     if (nbPC.charAt(i)<choixJoueur.charAt(i))
-                        System.out.println("<");
+                        System.out.print("<");
 
                     else if (nbPC.charAt(i)>choixJoueur.charAt(i))
-                        System.out.println(">");
+                        System.out.print(">");
 
                     else
-                        System.out.println("=");
+                        System.out.print("=");
                 }
             }
-            while((choixJoueur.compareTo(nbPC)!=0)&&(j++<longueurJeu));
+            while((choixJoueur.compareTo(nbPC)!=0)&&(nbEssais++<longueurnb));
 
             if(choixJoueur.compareTo(nbPC)==0)
                 System.out.println("Bravo ! vous avez gagné !!!");
