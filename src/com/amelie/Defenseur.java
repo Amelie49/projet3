@@ -1,43 +1,76 @@
 package com.amelie;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Defenseur {
 
-    static Configuration configuration = new Configuration();
-    static int longueurnb = configuration.getLongueurJeu();
-    int nbEssais = configuration.getNbEssais();
 
 
+    public static void comparer() {
 
-    public static int comparaison (){
         String nbMystere;
-        int code;
         int i;
-        String nbPc;
+        int longueurJeu = 4;
+        int code;
+        String nbPc = null;
+        Integer nbAComparer;
+        String nbPcCompare = null;
 
-        System.out.println("Quel est le code mystère que l'ordinateur doit trouver ?");
+        System.out.println("Quel est le code que l'ordinateur doit trouver ?");
 
         Scanner sc = new Scanner(System.in);
         nbMystere = sc.nextLine();
 
-        Random r = new Random();
-        code = r.nextInt(longueurnb);
-        return code;
 
-        do{
-        for (i=0;i< longueurnb;i++){
+        System.out.println("Proposition de l'ordinateur :");
 
-            if (nbPc.charAt(i) < nbMystere.charAt(i))
+        for (i=0;i<longueurJeu;i++) {
+            Random r = new Random();
+            code = r.nextInt(10);
+            nbPc = String.valueOf(code);
+            nbPcCompare.charAt(i) = nbPc.charAt(1);
+
+            System.out.print(nbPcCompare);
+            System.out.println("\n");
+        }
+
+        for (i=0;i<longueurJeu;i++) {
+
+            if(nbMystere.charAt(i)>nbPcCompare.charAt(i))
+                System.out.println(">");
+
+            else if (nbMystere.charAt(i)<nbPcCompare.charAt(i))
                 System.out.println("<");
 
-            else if (nbPc.charAt(i) > nbMystere.charAt(i))
-                System.out.print(">");
-
             else
-                System.out.print("=");
+                System.out.println("=");
 
-    }
+        }
+
+        System.out.println ("Proposition de l'ordinateur :");
+
+        for (i=0;i<longueurJeu;i++) {
+            nbAComparer = Integer.valueOf(nbPcCompare.charAt(i));
+
+            if(nbMystere.charAt(i)>nbPc.charAt(i)) {
+                Random r1 = new Random();
+                code = r1.nextInt(9-nbAComparer)+nbAComparer;
+                nbPc = String.valueOf(code);
+
+            }else if (nbPc.charAt(i)>nbMystere.charAt(i)) {
+                nbAComparer = Integer.valueOf(nbPc.charAt(i));
+                Random r1 = new Random();
+                code = r1.nextInt(nbAComparer);
+                nbPc = String.valueOf(code);
+                System.out.print(nbPc);
+
+            }else {
+                System.out.print(nbMystere.charAt(i));
+            }
+        }
+
     }
 }
+
