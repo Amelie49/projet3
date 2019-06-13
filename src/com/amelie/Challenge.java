@@ -9,81 +9,94 @@ public class Challenge implements DeroulementJeu{
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
-    /**
-     * code aléatoire
-     * @return
-     */
+    MethodesRepetitives methodesrepetitives = new MethodesRepetitives();
+    int nbRandom;
+
+    String proposition = null;
+    int nbJoueur;
+    int i;
+    boolean vf = false;
+    String reponse;
+    String nbMystere = null;
+    int j;
+    String compare;
 
 
-    public  void comparaison() {
-        String choixJoueur = null;
-        int nbJoueur;
-        int i;
-        int nbEssais = 0;
-        boolean vf = false;
-        char reponse = ' ';
-        String nbPC = null;
+    public void nbMystere () {
+
+        /*générer code aléatoire*/
+        nbRandom = methodesrepetitives.genererCodeAleatoire();
+        nbMystere=String.valueOf(nbRandom);
+
+        /*Afficher nb mystere selon mode developpeur actif ou non*/
+        if (modeDeveloppeur = true) {
+            System.out.println(nbMystere);
+        }else {
+        }
+
+    }
+
+    public void jeuTourneUneFois () {
 
         do {
+            do{
+                System.out.println("Quelle est votre proposition ?");
 
-            Codealeatoire codealeatoire = new Codealeatoire();
-            int nbRandom = codealeatoire.genererCodeAleatoire();
+                Scanner sc = new Scanner(System.in);
+                proposition = sc.nextLine();
+                i=0;
 
-            if (modeDeveloppeur = true)
-                System.out.println(nbRandom);
-            else
-
-                do {
-                    System.out.println("Quelle est votre proposition ?");
-
-                    do {/* gérer exception si le joueur ne saisi pas un int*/
-
-                        do{
-                            Scanner sc = new Scanner(System.in);
-                            choixJoueur = sc.nextLine();
-                            i=0;
-
-                            for(i=0;i<choixJoueur.length();i++) {
-
-                                vf = Character.isDigit(choixJoueur.charAt(i));
-                            }
-
-                            if(vf==false) {
-
-                                System.out.println("Vous n'avez pas saisi un nombre");
-                            }else {
-                                System.out.println("");
-                            }
-                        }
-                        while (vf == false && i++<longueurNb);
-
-                        /* si le joueur ne saisi pas un nombre à 4 chiffres*/
-
-                        if (choixJoueur.length() == longueurNb) {
-                        }else {
-                            System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
-                            System.out.println(choixJoueur.length());
-                        }
-                    }
-                    while(choixJoueur.length() !=longueurNb);
-
-                    nbPC = String.valueOf(nbRandom);
-
-                    for (i=0;i< longueurNb;i++) {
-
-                        if (nbPC.charAt(i)<choixJoueur.charAt(i))
-                            System.out.print("<");
-
-                        else if (nbPC.charAt(i)>choixJoueur.charAt(i))
-                            System.out.print(">");
-
-                        else
-                            System.out.print("=");
-                    }
+                /* si le joueur ne saisi pas un nombre */
+                for(i=0;i<proposition.length();i++) {
+                    vf = Character.isDigit(proposition.charAt(i));
                 }
-                while((choixJoueur.compareTo(nbPC)!=0)&&(nbEssais++<longueurNb));
 
-            if(choixJoueur.compareTo(nbPC)==0)
+                if(vf==false) {
+                    System.out.println("Vous n'avez pas saisi un nombre");
+                }else {
+                    System.out.println("");
+                }
+            }
+            while (vf == false && i<longueurNb);
+
+            /* si le joueur ne saisi pas un nombre à 4 chiffres*/
+            if (proposition.length() == longueurNb) {
+            }else {
+                System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
+            }
+        }
+        while(proposition.length() !=longueurNb);
+
+        /* Comparer les valeurs du Random et de la proposition du joueur
+         */
+        compare = "";
+        for (i=0;i<longueurNb;i++) {
+
+            if (nbMystere.charAt(i)<proposition.charAt(i))
+                compare = compare + "<";
+
+            else if (nbMystere.charAt(i)>proposition.charAt(i))
+                compare = compare + ">";
+
+            else
+                compare = compare + "=";
+
+        }
+        System.out.println(compare);
+    }
+
+    public void boucle() {
+
+
+        do {
+            nbMystere();
+            i=0;
+            do {
+                jeuTourneUneFois();
+            }
+            while (!proposition.equals(nbMystere) && j++<nbEssais);
+
+            if(proposition.compareTo(nbMystere)==0)
                 System.out.println("Bravo ! vous avez gagné !!!");
 
             else
@@ -92,17 +105,18 @@ public class Challenge implements DeroulementJeu{
             do {
                 System.out.println("Souhaitez-vous rejouer O/N?");
                 Scanner sc2 = new Scanner(System.in);
-                reponse = sc2.nextLine().charAt(0);
+                reponse = sc2.nextLine();
+                reponse = reponse.toUpperCase();
 
-                if (reponse!='O' && reponse !='N') {
+                if (reponse.compareTo ("O")!=0 && reponse.compareTo ("N")!=0) {
                     System.out.println("Vous n'avez pas saisi un caractère valide !");
                 }else {
                 }
             }
-            while(reponse!='O'&&reponse!='N');
+            while(!reponse.equals("O") && !reponse.equals("N"));
 
         }
-        while(reponse=='O');
-    }
+        while (reponse.equals("O"));
 
+    }
 }

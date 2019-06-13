@@ -2,6 +2,8 @@ package com.amelie;
 
 public interface DeroulementJeu {
 
-    public void comparaison();
+    public void nbMystere();
+    public void jeuTourneUneFois();
+    public void boucle();
 
 }
