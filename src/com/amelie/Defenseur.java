@@ -1,119 +1,131 @@
 package com.amelie;
 
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Defenseur implements DeroulementJeu {
+public class Defenseur{
 
+    /*Appeler valeur de la classe configuration*/
     static Configuration configuration = new Configuration();
     static int longueurNb = configuration.getLongueurJeu();
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
+    /*Appeler méthodes de la classe méthodesrépétitives*/
     MethodesRepetitives methodesrepetitives = new MethodesRepetitives();
-    int nbRandom = methodesrepetitives.genererCodeAleatoire();
 
-    String nbMystere = null;
-    String proposition = null;
-    int i;
-    boolean vf = true;
     String reponse;
-    int j =0;
-    String resultat;
-    String compare;
-    int x;
+    int i;
 
+/** Génère le nombre que l'ordinateur doit deviner*/
+    public String nbMystere() {
+        boolean vf = true;
 
-    public void nbMystere() {
-
-        /*Vérifie si est bien un int*/
-
+        String nbInconnu = new String();
 
         System.out.println("Quel est le code que l'ordinateur doit trouver ?");
 
-        /*Le joueur propose un nombre que l'ordinateur devra trouver*/
+        do {/*Vérifie si bien un int*/
+            Scanner sc = new Scanner(System.in);
+            nbInconnu = sc.nextLine();
 
-        do {
-            do {
-                Scanner sc = new Scanner(System.in);
-                nbMystere = sc.nextLine();
-
-                for(i=0;i<nbMystere.length();i++) {
-                    vf = Character.isDigit(nbMystere.charAt(i));
-                }
-
-                if(vf==false) {
-                    System.out.println("Vous n'avez pas saisi un nombre. Recommencez.");
-                }else {
-                    System.out.println("");
-                }
+            for (i = 0; i < nbInconnu.length(); i++) {/*boucle pour parcourir chaque chiffre du nombre*/
+                vf = Character.isDigit(nbInconnu.charAt(i));/*Vérifie si nbInconnu est un int*/
             }
-            while (vf == false && i<longueurNb);/*si pas un int redemande au joueur de saisir un nombre*/
 
-            /* si le joueur ne saisi pas un nombre à 4 chiffres*/
-            if (nbMystere.length() == longueurNb) {
-            }else {
+            if (vf == false) {
+                System.out.println("Vous n'avez pas saisi un nombre. Recommencez.");
+            } else {
+                System.out.println("");
+            }
+
+            if (nbInconnu.length() == longueurNb) {
+            } else {
                 System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
             }
+
         }
-        while(longueurNb !=nbMystere.length());/*si le joueur ne saisi pas un nombre à 4 chiffres redemande au joueur une saisie*/
+        while (vf == false && i < longueurNb && longueurNb != nbInconnu.length());/*si pas un int à 4 chiffres redemande au joueur de saisir un nombre*/
+
+        return nbInconnu;
     }
 
 
+    /* génère un code aléatoire*/
+    public String codeAleatoire() {
 
-    public void jeuTourneUneFois() {
+        String proposition = new String();
 
-        System.out.println("Proposition de l'ordinateur :");
+        int nbRandom = methodesrepetitives.genererCodeAleatoire();
 
         proposition = String.valueOf(nbRandom);
 
-        resultat=proposition;
+        System.out.println("Proposition de l'ordinateur : " + proposition);
 
-        System.out.println(resultat);
-
-
-        compare = "";
-        resultat = "";
-
-        for (i=0;i<longueurNb;i++){
-            if(nbMystere.charAt(i)>proposition.charAt(i)) {
-                compare = compare +">";
-                resultat =resultat + (char) (proposition.charAt(i) +1);
-
-            }else if (nbMystere.charAt(i)<proposition.charAt(i)) {
-                compare = compare +"<";
-                resultat =resultat + (char) (proposition.charAt(i) -1);
-
-            }else {
-                compare = compare + "=";
-                resultat =resultat + (char) (proposition.charAt(i));
-            }
-        }
-
-        System.out.println(compare);
-
-        if(i<nbEssais) {
-            System.out.println(resultat);
-        }else {
-        }
+        return proposition;
     }
 
 
+    /*Fais tourner le jeu une fois*/
+    public String jeuTourneUneFois(String nbInconnu, String proposition) {
 
-    public void boucle() {
+        String res = new String();
+        String comp = new String();
+        String a = proposition;
+
+        for (i = 0; i < longueurNb; i++) {/*Comparer chaque chiffre du nombre*/
+
+            if (nbInconnu.charAt(i) > a.charAt(i)) {
+                comp = comp + ">";
+                res = res + (char) (a.charAt(i) + 1);
+
+            } else if (nbInconnu.charAt(i) < a.charAt(i)) {
+                comp = comp + "<";
+                res = res + (char) (a.charAt(i) - 1);
+
+            } else {
+                comp = comp + "=";
+                res = res + (char) (a.charAt(i));
+            }
+        }
+        System.out.println(comp);
+
+        return res;
+    }
+
+
+    public void boucle(String a, String res, String nbInconnu) {
+
+        String code = new String();
+        String b = new String();
+        String soluce = new String();
+        int j = 0;
+
+        b = nbMystere();
+
+        int random = methodesrepetitives.genererCodeAleatoire();
+        code = String.valueOf(random);
+
+        System.out.println("Proposition de l'ordinateur : " + code);
+
+        res = jeuTourneUneFois(nbInconnu, a);
+
+        System.out.println(j);
 
         do {
-            nbMystere();
-            j=1;
+                j=0;
 
-            do {
-                jeuTourneUneFois();
+                res = jeuTourneUneFois(b, code);
+
+                if (j < nbEssais) {
+                    System.out.println("Proposition de l'ordinateur : " + res);
+                    break;
+                }
             }
-            while((proposition.compareTo(nbMystere)!=0)&&(j++<nbEssais));
+            while ((res.compareTo(b) != 0) && (j++ < nbEssais));
 
-            if(proposition.compareTo(nbMystere)==0)
+            if (a.compareTo(nbInconnu) == 0)
                 System.out.println("Dommage, vous avez perdu !!!");
 
             else
@@ -125,15 +137,16 @@ public class Defenseur implements DeroulementJeu {
                 reponse = sc2.nextLine();
                 reponse = reponse.toUpperCase();
 
-                if (!reponse.equals ("O") && !reponse.equals ("N")) {
+                if (!reponse.equals("O") && !reponse.equals("N")) {
                     System.out.println("Vous n'avez pas saisi un caractère valide !");
-                }else {
+                } else {
                 }
             }
-            while(!reponse.equals("O") && !reponse.equals("N"));
-        }
-        while (reponse.equals("O"));
+            while (!reponse.equals("O") && !reponse.equals("N"));
+
+
     }
+
 
 }
 

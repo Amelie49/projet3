@@ -2,7 +2,7 @@ package com.amelie;
 
 import java.util.Scanner;
 
-public class Challenge implements DeroulementJeu{
+public class Challenge{
 
     static Configuration configuration = new Configuration();
     static int longueurNb = configuration.getLongueurJeu();
@@ -22,7 +22,7 @@ public class Challenge implements DeroulementJeu{
     String compare;
 
 
-    public void nbMystere () {
+    public String nbMystere () {
 
         /*générer code aléatoire*/
         nbRandom = methodesrepetitives.genererCodeAleatoire();
@@ -33,10 +33,10 @@ public class Challenge implements DeroulementJeu{
             System.out.println(nbMystere);
         }else {
         }
-
+        return nbMystere;
     }
 
-    public void jeuTourneUneFois () {
+    public String jeuTourneUneFois () {
 
         do {
             do{
@@ -83,6 +83,8 @@ public class Challenge implements DeroulementJeu{
 
         }
         System.out.println(compare);
+
+        return proposition;
     }
 
     public void boucle() {

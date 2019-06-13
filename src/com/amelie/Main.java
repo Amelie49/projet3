@@ -8,17 +8,13 @@ public class Main {
         Annonceniveaux Annonceniveaux = new Annonceniveaux();
         Annonceniveaux.afficherLesNiveaux();
 
+Challenge Challenge = new Challenge();
+        Defenseur Defenseur = new Defenseur();
+        Defenseur.nbMystere();
+        String s = Defenseur.nbMystere();
+        String a = Defenseur.codeAleatoire();
+        String b = Defenseur.jeuTourneUneFois(s,a);
+        Defenseur.boucle(s,a,b);
 
-        Challenge Challenge = new Challenge();
-        Defenseur.boucle();
-
-            }
-        }
-
-
-
-
-
-
-
-
+    }
+}

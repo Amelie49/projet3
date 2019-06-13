@@ -2,8 +2,9 @@ package com.amelie;
 
 public interface DeroulementJeu {
 
-    public void nbMystere();
-    public void jeuTourneUneFois();
+    public String nbMystere();
+    public String codeAleatoire();
+    public String jeuTourneUneFois();
     public void boucle();
 
 }

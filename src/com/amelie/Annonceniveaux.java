@@ -68,9 +68,6 @@ public class Annonceniveaux {
 
                 challenge.boucle();
 
-            else if (nbLevel.equals("2"))
-
-                defenseur.boucle();
 
             else
                 duel.jeu();

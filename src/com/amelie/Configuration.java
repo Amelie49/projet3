@@ -20,4 +20,7 @@ public class Configuration {
     public boolean getModeDeveloppeur () {
         return modeDeveloppeur;
     }
-}
+
+
+                }
+
