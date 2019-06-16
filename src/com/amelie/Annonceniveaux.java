@@ -10,8 +10,6 @@ public class Annonceniveaux {
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
-    MethodesRepetitives methodesrepetitives = new MethodesRepetitives();
-
     /**
      * Afficher chaque niveau
      */
@@ -29,15 +27,13 @@ public class Annonceniveaux {
     /**
      * Afficher niveau sélectionné
      */
-    public void jeu() {
+    /*public void jeuEntier() {
         String nbLevel;
         Challenge challenge = new Challenge();
         Defenseur defenseur = new Defenseur();
         Duel duel = new Duel ();
         int i;
         String reponse = null;
-
-        do {
 
             do {
                 System.out.println("Quel niveau choisissez-vous ?");
@@ -48,9 +44,11 @@ public class Annonceniveaux {
 
                     case "1":
                         System.out.println("Vous avez choisi le niveau challenge");
+                        challenge.jeu();
                         break;
                     case "2":
                         System.out.println("Vous avez choisi le niveau défenseur");
+                        defenseur.jeu();
                         break;
                     case "3":
                         System.out.println("Vous avez choisi le niveau duel");
@@ -66,18 +64,14 @@ public class Annonceniveaux {
 
             if(nbLevel.equals("1"))
 
-                challenge.boucle();
-
-
-            else
-                duel.jeu();
+                challenge.jeu();
 
             methodesrepetitives.rejouer();
 
         }
         while (reponse.equals("O"));
 
-    }
+    }*/
 
 }
 

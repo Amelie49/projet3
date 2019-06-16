@@ -2,123 +2,101 @@ package com.amelie;
 
 import java.util.Scanner;
 
-public class Challenge{
+public class Challenge {
 
+    private static final String String = null;
+    /*Valeurs reprises de la classe configuration*/
     static Configuration configuration = new Configuration();
     static int longueurNb = configuration.getLongueurJeu();
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
+    /*Méthodes reprises de la classe methodesrepetitives*/
     MethodesRepetitives methodesrepetitives = new MethodesRepetitives();
-    int nbRandom;
-
-    String proposition = null;
-    int nbJoueur;
-    int i;
-    boolean vf = false;
-    String reponse;
-    String nbMystere = null;
-    int j;
-    String compare;
 
 
-    public String nbMystere () {
+    public String nbMystere() {
+
+        String nbInconnu = new String();
 
         /*générer code aléatoire*/
-        nbRandom = methodesrepetitives.genererCodeAleatoire();
-        nbMystere=String.valueOf(nbRandom);
+        nbInconnu = methodesrepetitives.genererCodeAleatoire();
 
         /*Afficher nb mystere selon mode developpeur actif ou non*/
         if (modeDeveloppeur = true) {
-            System.out.println(nbMystere);
-        }else {
+            System.out.println("Combinaison secrète du Joueur : " + nbInconnu);
+        } else {
         }
-        return nbMystere;
+        return nbInconnu;
     }
 
-    public String jeuTourneUneFois () {
+    public String proposition() {
 
-        do {
-            do{
-                System.out.println("Quelle est votre proposition ?");
+        String proposition;
+        boolean vf = false;
+        int i;
 
-                Scanner sc = new Scanner(System.in);
-                proposition = sc.nextLine();
-                i=0;
+        do { /*Vérifier si la saisie du joueur est bien un nombre à 4 chiffres*/
+            System.out.println("Proposition Joueur :");
 
-                /* si le joueur ne saisi pas un nombre */
-                for(i=0;i<proposition.length();i++) {
-                    vf = Character.isDigit(proposition.charAt(i));
-                }
+            Scanner sc = new Scanner(System.in);
+            proposition = sc.nextLine();
 
-                if(vf==false) {
-                    System.out.println("Vous n'avez pas saisi un nombre");
-                }else {
-                    System.out.println("");
-                }
+            for (i = 0; i < proposition.length(); i++) {/*boucle qui vérifie chaque chiffre du nombre*/
+                vf = Character.isDigit(proposition.charAt(i));
             }
-            while (vf == false && i<longueurNb);
 
-            /* si le joueur ne saisi pas un nombre à 4 chiffres*/
-            if (proposition.length() == longueurNb) {
-            }else {
-                System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
+            if (vf == false) {/*si pas un nombre ou pas un nombre à 4 chiffres (renvoi deux messages d'erreurs différents)*/
+                System.out.println("Vous n'avez pas saisi un nombre. Recommencez");
+            } else if (proposition.length() != longueurNb) {
+                System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
             }
-        }
-        while(proposition.length() !=longueurNb);
-
-        /* Comparer les valeurs du Random et de la proposition du joueur
-         */
-        compare = "";
-        for (i=0;i<longueurNb;i++) {
-
-            if (nbMystere.charAt(i)<proposition.charAt(i))
-                compare = compare + "<";
-
-            else if (nbMystere.charAt(i)>proposition.charAt(i))
-                compare = compare + ">";
-
-            else
-                compare = compare + "=";
 
         }
-        System.out.println(compare);
+        while (vf == false || i < longueurNb || proposition.length() != longueurNb);
 
         return proposition;
     }
 
-    public void boucle() {
 
+    public String compare(String nb1, String nb2) {
+        String comp = new String();
+        int j;
 
-        do {
-            nbMystere();
-            i=0;
-            do {
-                jeuTourneUneFois();
+        for (j = 0; j < longueurNb; j++) {/*Comparer chaque chiffre du nombre*/
+
+            if (nb1.charAt(j) > nb2.charAt(j)) {
+                comp = comp + ">";
+
+            } else if (nb1.charAt(j) < nb2.charAt(j)) {
+                comp = comp + "<";
+
+            } else {
+                comp = comp + "=";
             }
-            while (!proposition.equals(nbMystere) && j++<nbEssais);
-
-            if(proposition.compareTo(nbMystere)==0)
-                System.out.println("Bravo ! vous avez gagné !!!");
-
-            else
-                System.out.println("Dommage, vous avez perdu !!!");
-
-            do {
-                System.out.println("Souhaitez-vous rejouer O/N?");
-                Scanner sc2 = new Scanner(System.in);
-                reponse = sc2.nextLine();
-                reponse = reponse.toUpperCase();
-
-                if (reponse.compareTo ("O")!=0 && reponse.compareTo ("N")!=0) {
-                    System.out.println("Vous n'avez pas saisi un caractère valide !");
-                }else {
-                }
-            }
-            while(!reponse.equals("O") && !reponse.equals("N"));
-
         }
-        while (reponse.equals("O"));
 
+        return comp;
+    }
+
+    public void jeu() {/*boucle la méthode jeuTourneUneFois selon le nombre d'essais défini*/
+
+        String nbOrdi = nbMystere();
+        String nbJoueur = proposition();
+        String resultcomp = "";
+        boolean victoire = false;
+        int k;
+
+        for (k = 1; victoire == false && k <= nbEssais; k++) {
+            resultcomp = compare(nbOrdi, nbJoueur);
+            System.out.println(" -> Réponse Joueur : " + resultcomp);
+
+
+            if (resultcomp.equals("====")) {
+                victoire = true;
+            } else if (k < nbEssais) {
+                nbJoueur = proposition();
+            }
+        }
     }
 }

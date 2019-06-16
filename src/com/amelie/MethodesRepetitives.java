@@ -25,16 +25,27 @@ public class MethodesRepetitives {
 
     /** Générer le code aléatoire en int
      */
-    public int genererCodeAleatoire () {
-        Random r = new Random();
-        code = r.nextInt(intervalRandom);
-        return code;
+    public String genererCodeAleatoire(){
+
+        int i;
+        String res = new String();
+        int n;
+        double d;
+        String nbInconnu = new String();
+
+        for (i=0;i<4;i++) {
+
+            n = (int)(Math.random()*5);
+            res = String.valueOf(n);
+            nbInconnu = nbInconnu + res;
+        }
+        return nbInconnu;
     }
 
 
-    public void afficherNombreMystere () {
+    public void afficherNombreMystere (String nbInconnu) {
         if (modeDeveloppeur = true) {
-            System.out.println(nbRandom);
+            System.out.println(nbInconnu);
         }else {
         }
     }
