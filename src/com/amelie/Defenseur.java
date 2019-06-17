@@ -98,11 +98,14 @@ public class Defenseur{
 
     public void jeu() {/* boucle qui fait tourner le jeu defenseur*/
 
+        String resultcomp = "";
+        int k;
+        String reponse;
+
         String nbJoueur = nbMystere();
         String nbOrdi =proposition();
-        String resultcomp = "";
         boolean victoire = false;
-        int k;
+
 
         System.out.println("Proposition ordinateur : " + nbOrdi);
 
@@ -111,20 +114,22 @@ public class Defenseur{
             resultcomp = compare(nbJoueur, nbOrdi);
             System.out.println(" -> Réponse Ordinateur : " + resultcomp);
 
-
             if (resultcomp.equals("====")) {
                 victoire = true;
             }
             else if(k<nbEssais){
                 nbOrdi = ajuste(nbOrdi, resultcomp);
                 System.out.println("Proposition Ordinateur : " + nbOrdi);
-
             }
         }
+
+        if (nbJoueur.compareTo(nbOrdi) == 0)
+            System.out.println("Dommage, vous avez perdu !!!");
+
+        else
+            System.out.println("Bravo ! vous avez gagné !!!");
+
     }
 
 }
-
-
-
 

@@ -33,16 +33,18 @@ public class Challenge {
     public String proposition() {
 
         String proposition;
-        boolean vf = false;
         int i;
+        boolean vf;
 
         do { /*Vérifier si la saisie du joueur est bien un nombre à 4 chiffres*/
             System.out.println("Proposition Joueur :");
 
             Scanner sc = new Scanner(System.in);
             proposition = sc.nextLine();
+            vf = true;
 
-            for (i = 0; i < proposition.length(); i++) {/*boucle qui vérifie chaque chiffre du nombre*/
+
+            for (i = 0; vf==true && i < proposition.length(); i++) {/*boucle qui vérifie chaque chiffre du nombre*/
                 vf = Character.isDigit(proposition.charAt(i));
             }
 
@@ -81,11 +83,14 @@ public class Challenge {
 
     public void jeu() {/*boucle la méthode jeuTourneUneFois selon le nombre d'essais défini*/
 
+
+        String resultcomp = "";
+        int k;
+        String reponse;
         String nbOrdi = nbMystere();
         String nbJoueur = proposition();
-        String resultcomp = "";
         boolean victoire = false;
-        int k;
+
 
         for (k = 1; victoire == false && k <= nbEssais; k++) {
             resultcomp = compare(nbOrdi, nbJoueur);
@@ -98,5 +103,13 @@ public class Challenge {
                 nbJoueur = proposition();
             }
         }
-    }
-}
+
+        System.out.println("Le nombre mystère est : " + nbOrdi);
+
+        if (nbJoueur.compareTo(nbOrdi) == 0)
+            System.out.println("Bravo ! vous avez gagné !!!");
+
+        else
+            System.out.println("Dommage, vous avez perdu !!!");
+
+    }}
