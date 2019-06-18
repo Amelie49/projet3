@@ -1,17 +1,16 @@
 package com.amelie;
 
 
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class Defenseur{
+public class Defenseur implements DeroulementJeu {
 
     /*Appeler valeur de la classe configuration*/
     static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurJeu();
-    int nbEssais = configuration.getNbEssais();
-    boolean modeDeveloppeur = configuration.getModeDeveloppeur();
+    static int longueurNb = configuration.getLongueurJeu();/*recuperer longueur du nb*/
+    int nbEssais = configuration.getNbEssais();/*recuperer nb essais*/
+    boolean modeDeveloppeur = configuration.getModeDeveloppeur();/*recuperer modedeveloppeur actif ou non */
 
     /*Appeler méthodes de la classe méthodesrépétitives*/
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
@@ -19,32 +18,26 @@ public class Defenseur{
 
     public String nbMystere() {/*Demande au joueur la saisie du nombre que l'ordinateur doit deviner et controle le format*/
 
-        boolean vf = true;
-        String nbInconnu = new String();
-        int i;
-
-        System.out.println("Combinaison secrète de l'Ordinateur : " );
+        boolean vf;
+        String nb = new String();
+        int i = 0;
 
         do {/*Vérifie si bien un int à 4 chiffres*/
+            System.out.println("Combinaison secrète de l'Ordinateur : ");
+
             Scanner sc = new Scanner(System.in);
-            nbInconnu = sc.nextLine();
+            nb = sc.nextLine();/*demander une saisie au joueur*/
+            vf = true;
 
-            for (i = 0; i < nbInconnu.length(); i++) {/*boucle pour parcourir chaque chiffre du nombre*/
-                vf = Character.isDigit(nbInconnu.charAt(i));/*Vérifie si nbInconnu est un int*/
-            }
-
-            if (vf == false) {/*si pas un nombre ou pas un nombre à 4 chiffres (renvoi deux messages d'erreurs différents)*/
-                System.out.println("Vous n'avez pas saisi un nombre. Recommencez.");
-            } else if (nbInconnu.length() != longueurNb) {
-                System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
-            }
+            vf = methodesRepetitives.siEstUnNombreAQuatreChiffres(vf, nb);
 
         }
-        while (vf == false || i < longueurNb || longueurNb != nbInconnu.length());/*si pas un int à 4 chiffres redemande au joueur de saisir un nombre*/
+        while (vf == false || nb.length() != longueurNb);/*si pas un int à 4 chiffres redemande au joueur de saisir un nombre*/
 
 
-        return nbInconnu;
+        return nb;
     }
+
 
     public String proposition() {/*generer un code aleatoire*/
         String code = new String();
@@ -53,29 +46,8 @@ public class Defenseur{
         return code;
     }
 
-    /*compare nb inconnu et code aleatoire*/
-    public String compare (String nb1,  String nb2) {
-        String comp = new String();
-        int j;
 
-        for (j = 0; j < longueurNb; j++) {/*Comparer chaque chiffre du nombre*/
-
-            if (nb1.charAt(j) > nb2.charAt(j)) {
-                comp = comp + ">";
-
-            } else if (nb1.charAt(j) < nb2.charAt(j)) {
-                comp = comp + "<";
-
-            } else {
-                comp = comp + "=";
-            }
-        }
-        return comp;
-    }
-
-
-
-    public String ajuste (String nb,  String compare) {/*ajuster le code selon retour du compare*/
+    public String ajuste(String nb, String compare) {/*ajuster le code selon retour du compare*/
         String res = new String();
         int i;
 
@@ -84,7 +56,7 @@ public class Defenseur{
             if (compare.charAt(i) == '>') {
                 res = res + (char) (nb.charAt(i) + 1);
 
-            }else if (compare.charAt(i) == '<') {
+            } else if (compare.charAt(i) == '<') {
                 res = res + (char) (nb.charAt(i) - 1);
 
             } else {
@@ -95,41 +67,37 @@ public class Defenseur{
     }
 
 
-
-    public void jeu() {/* boucle qui fait tourner le jeu defenseur*/
+    public boolean jeu() {/* boucle qui fait tourner le jeu defenseur*/
 
         String resultcomp = "";
         int k;
         String reponse;
 
-        String nbJoueur = nbMystere();
-        String nbOrdi =proposition();
-        boolean victoire = false;
+        String nbJoueur = nbMystere();/*demande au joueur de saisir le nb que l'ordinateur doit trouver*/
+        String nbOrdi = proposition();/*valeur aleatoire donnee par l'ordinateur*/
+        boolean victoireNiveau = false;
 
 
-        System.out.println("Proposition ordinateur : " + nbOrdi);
+        System.out.println("Proposition ordinateur : " + nbOrdi);/*affiche la valeur que l'ordinateur propose*/
 
-        for(k=1;victoire == false && k<=nbEssais;k++){
+        for (k = 1; victoireNiveau == false && k <= nbEssais; k++) {
 
-            resultcomp = compare(nbJoueur, nbOrdi);
-            System.out.println(" -> Réponse Ordinateur : " + resultcomp);
+            resultcomp = methodesRepetitives.compare(nbJoueur, nbOrdi);//*compare la valeur de l'ordinateur avec celle du joueur*/
+            System.out.println(" -> Réponse Ordinateur : " + resultcomp);/* affiche les symboles de comparaion*/
 
-            if (resultcomp.equals("====")) {
-                victoire = true;
-            }
-            else if(k<nbEssais){
+            if (resultcomp.equals("====")) {/*si les symboles correspondent a ==== alors victoire correspond a vrai*/
+                victoireNiveau = true;
+            } else if (k < nbEssais) {/*si le nb d'essais final n'est pas atteind, redemander un nb a l'ordinateur et relancer la comparaison*/
                 nbOrdi = ajuste(nbOrdi, resultcomp);
                 System.out.println("Proposition Ordinateur : " + nbOrdi);
             }
         }
-
-        if (nbJoueur.compareTo(nbOrdi) == 0)
-            System.out.println("Dommage, vous avez perdu !!!");
-
+        if (victoireNiveau == true)/*si l'ordinateur trouve le code le joueur a perdu sinon il a gagne*/
+            victoireNiveau = false;
         else
-            System.out.println("Bravo ! vous avez gagné !!!");
+            victoireNiveau = true;
+
+        return victoireNiveau;
 
     }
-
 }
-

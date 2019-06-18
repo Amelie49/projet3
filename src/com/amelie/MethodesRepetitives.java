@@ -9,12 +9,10 @@ public class MethodesRepetitives {
     public Integer code;
 
     static Configuration configuration = new Configuration();
-    static int intervalRandom = (int) Math.pow (10,configuration.getLongueurJeu());
+    static int longueurNb = configuration.getLongueurJeu();
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur;
-    int nbRandom;
 
-    int longueurNb;
     int i;
     String nbPc;
     String proposition;
@@ -43,65 +41,61 @@ public class MethodesRepetitives {
     }
 
 
-    public void afficherNombreMystere (String nbInconnu) {
-        if (modeDeveloppeur = true) {
-            System.out.println(nbInconnu);
-        }else {
-        }
-    }
-
-
     /** Savoir si la saisie correspond bien à un nombre
      */
-    public void siEstUnNombre () {
-        for(i=0;i<codeJoueur.length();i++) {
-            vf = Character.isDigit(codeJoueur.charAt(i));
+    public boolean siEstUnNombreAQuatreChiffres (boolean vf, String nb) {
+        for(i=0;vf==true && i < nb.length();i++) {
+            vf = Character.isDigit(nb.charAt(i));
         }
 
         if(vf==false) {
-            System.out.println("Vous n'avez pas saisi un nombre");
-        }else {
-            System.out.println("");
+            System.out.println("Vous n'avez pas saisi un nombre. Recommencez");
+        } else if (nb.length() != longueurNb) {
+            System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
         }
+
+        return vf;
     }
 
-    /** Savoir si la saisie est bien un nombre à 4 chiffres
-     */
-    public void SiEstUnNombreAQuatreChiffres () {
-        if (codeJoueur.length() == longueurNb) {
-        }else {
-            System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez.");
+
+    public String compare(String nb1, String nb2) {
+        String comp = new String();
+        int j;
+
+        for (j = 0; j < longueurNb; j++) {/*Comparer chaque chiffre du nombre*/
+
+            if (nb1.charAt(j) > nb2.charAt(j)) {
+                comp = comp + ">";
+
+            } else if (nb1.charAt(j) < nb2.charAt(j)) {
+                comp = comp + "<";
+
+            } else {
+                comp = comp + "=";
+            }
+
         }
+
+        return comp;
     }
 
 
     /** Afficher si le joueur à gagner ou perdu
      */
-    public void vainqueurOuPerdant () {
-        if(proposition.compareTo(nbPc)==0)
+
+
+    public void vainqueurOuPerdant (boolean victoire) {
+
+
+        if(victoire == true)
             System.out.println("Bravo ! vous avez gagné !!!");
 
         else
             System.out.println("Dommage, vous avez perdu !!!");
+
     }
 
 
-    /** Si le joueur souhaite rejouer ou non
-     */
-    public void rejouer () {
-        do {
-            System.out.println("Souhaitez-vous rejouer O/N?");
-            Scanner sc2 = new Scanner(System.in);
-            reponse = sc2.nextLine();
-            reponse.toUpperCase();
-
-            if (!reponse.equals ("O") && !reponse.equals ("N")) {
-                System.out.println("Vous n'avez pas saisi un caractère valide !");
-            }else {
-            }
-        }
-        while(!reponse.equals("O") && !reponse.equals("N"));
-    }
 
 
 

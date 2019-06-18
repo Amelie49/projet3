@@ -2,7 +2,7 @@ package com.amelie;
 
 import java.util.Scanner;
 
-public class Challenge {
+public class Challenge implements DeroulementJeu{
 
     private static final String String = null;
     /*Valeurs reprises de la classe configuration*/
@@ -12,7 +12,7 @@ public class Challenge {
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
     /*Méthodes reprises de la classe methodesrepetitives*/
-    MethodesRepetitives methodesrepetitives = new MethodesRepetitives();
+    MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
 
 
     public String nbMystere() {
@@ -20,7 +20,7 @@ public class Challenge {
         String nbInconnu = new String();
 
         /*générer code aléatoire*/
-        nbInconnu = methodesrepetitives.genererCodeAleatoire();
+        nbInconnu = methodesRepetitives.genererCodeAleatoire();
 
         /*Afficher nb mystere selon mode developpeur actif ou non*/
         if (modeDeveloppeur = true) {
@@ -32,84 +32,53 @@ public class Challenge {
 
     public String proposition() {
 
-        String proposition;
-        int i;
+        String nb;
+        int i = 0;
         boolean vf;
 
         do { /*Vérifier si la saisie du joueur est bien un nombre à 4 chiffres*/
             System.out.println("Proposition Joueur :");
 
             Scanner sc = new Scanner(System.in);
-            proposition = sc.nextLine();
+            nb = sc.nextLine();
             vf = true;
 
-
-            for (i = 0; vf==true && i < proposition.length(); i++) {/*boucle qui vérifie chaque chiffre du nombre*/
-                vf = Character.isDigit(proposition.charAt(i));
-            }
-
-            if (vf == false) {/*si pas un nombre ou pas un nombre à 4 chiffres (renvoi deux messages d'erreurs différents)*/
-                System.out.println("Vous n'avez pas saisi un nombre. Recommencez");
-            } else if (proposition.length() != longueurNb) {
-                System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
-            }
+            vf = methodesRepetitives.siEstUnNombreAQuatreChiffres(vf,nb);
 
         }
-        while (vf == false || i < longueurNb || proposition.length() != longueurNb);
+        while (vf == false || nb.length() != longueurNb );
 
-        return proposition;
+        return nb;
     }
 
 
-    public String compare(String nb1, String nb2) {
-        String comp = new String();
-        int j;
-
-        for (j = 0; j < longueurNb; j++) {/*Comparer chaque chiffre du nombre*/
-
-            if (nb1.charAt(j) > nb2.charAt(j)) {
-                comp = comp + ">";
-
-            } else if (nb1.charAt(j) < nb2.charAt(j)) {
-                comp = comp + "<";
-
-            } else {
-                comp = comp + "=";
-            }
-        }
-
-        return comp;
-    }
-
-    public void jeu() {/*boucle la méthode jeuTourneUneFois selon le nombre d'essais défini*/
+    public boolean jeu() {/*boucle la méthode jeuTourneUneFois selon le nombre d'essais défini*/
 
 
         String resultcomp = "";
         int k;
         String reponse;
-        String nbOrdi = nbMystere();
-        String nbJoueur = proposition();
+        String nbOrdi = nbMystere();/*definir nb a trouver*/
+        String nbJoueur = proposition();/*demande au joueur de saisir un nombre*/
         boolean victoire = false;
 
 
-        for (k = 1; victoire == false && k <= nbEssais; k++) {
-            resultcomp = compare(nbOrdi, nbJoueur);
-            System.out.println(" -> Réponse Joueur : " + resultcomp);
+        for (k = 1; victoire == false && k <= nbEssais; k++) {/*une boucle qui tourne tant que le joueur n'a pas trouve le nb, et tant qu'on a pas atteind le nb limite d'essais*/
+            resultcomp = methodesRepetitives.compare(nbOrdi, nbJoueur);/*lancer la comparaison des valeur*/
+            System.out.println(" -> Réponse Joueur : " + resultcomp);/*afficher les symboles de comparaison*/
 
-
-            if (resultcomp.equals("====")) {
+            if (resultcomp.equals("====")) {/*si la saisie du joueur correspond au nb mystere alors victoire */
                 victoire = true;
-            } else if (k < nbEssais) {
+            } else if (k < nbEssais) { /*sinon relancer methode de saisie du joueur*/
                 nbJoueur = proposition();
             }
+
         }
+        System.out.println("Le nombre mystère est : " + nbOrdi);/*arrivee au dernier essai afficher le nb qu'il fallait trouver*/
 
-        System.out.println("Le nombre mystère est : " + nbOrdi);
+        return victoire;
 
-        if (nbJoueur.compareTo(nbOrdi) == 0)
-            System.out.println("Bravo ! vous avez gagné !!!");
+    }
 
-        else
-            System.out.println("Dommage, vous avez perdu !!!");
 
-    }}
+}
