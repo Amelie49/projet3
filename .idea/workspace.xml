@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="305cea47-f0d8-4b55-a206-a4c65bd94fec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/amelie/JeuEntier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/niveaux/Duel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Annonceniveaux.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/Challenge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Defenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/Defenseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Duel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/Duel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/Challenge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/Configuration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/Defenseur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/DeroulementJeu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/Duel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/JeuEntier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/MethodesRepetitives.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet3/com/amelie/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/Challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/niveaux/Challenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ressources/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/Defenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/niveaux/Defenseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonctionnement/DeroulementJeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/Duel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/JeuEntier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonctionnement/JeuEntier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonctionnement/MethodesRepetitives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/amelie/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/ressources/config.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,37 +36,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/config.properties">
+        <entry file="file://$PROJECT_DIR$/src/ressources/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="136">
+              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/JeuEntier.java">
+        <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/JeuEntier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="322">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/Duel.java">
+        <entry file="file://$PROJECT_DIR$/src/com/niveaux/Defenseur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/Defenseur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,66 +69,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/Challenge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet3.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/Configuration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-              <folding>
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/niveaux/Challenger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/niveaux/Duel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/DeroulementJeu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ressources/Configuration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/MethodesRepetitives.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -165,20 +176,31 @@
         <option value="$PROJECT_DIR$/src/com/amelie/Modesdejeux.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/Codealeatoire.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/Annonceniveaux.java" />
-        <option value="$PROJECT_DIR$/src/com/amelie/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/amelie/Duel.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/Configuration.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/Challenge.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/Defenseur.java" />
         <option value="$PROJECT_DIR$/src/com/amelie/JeuEntier.java" />
+        <option value="$PROJECT_DIR$/src/com/amelie/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/amelie/Duel.java" />
+        <option value="$PROJECT_DIR$/src/Fonctionnement/JeuEntier.java" />
+        <option value="$PROJECT_DIR$/src/fonctionnement/DeroulementJeu.java" />
+        <option value="$PROJECT_DIR$/src/fonctionnement/MethodesRepetitives.java" />
+        <option value="$PROJECT_DIR$/src/fonctionnement/JeuEntier.java" />
+        <option value="$PROJECT_DIR$/src/com/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/ressources/Configuration.java" />
+        <option value="$PROJECT_DIR$/src/com/niveaux/Challenge.java" />
+        <option value="$PROJECT_DIR$/src/com/niveaux/Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/com/niveaux/Duel.java" />
+        <option value="$PROJECT_DIR$/src/ressources/config.properties" />
+        <option value="$PROJECT_DIR$/src/com/niveaux/Challenger.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1144" />
-    <option name="width" value="783" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -187,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,14 +226,40 @@
               <item name="projet3" type="b2602c69:ProjectViewProjectNode" />
               <item name="projet3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="amelie" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fonctionnement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="niveaux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ressources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,6 +283,9 @@
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bouti\OneDrive\Bureau\OpenClassrooms\projet3\src\ressources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,7 +301,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.amelie.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.main.Main" />
       <module name="projet3" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -292,10 +344,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.65547127" visible="true" weight="0.11567164" />
-      <window_info id="Structure" order="1" sideWeight="0.3445287" side_tool="true" visible="true" weight="0.11567164" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.65025467" visible="true" weight="0.31947485" />
+      <window_info id="Structure" order="1" sideWeight="0.34974533" side_tool="true" visible="true" weight="0.31947485" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -303,7 +356,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3488624" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35557988" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -342,13 +395,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/amelie/Modesdejeux.java" />
     <entry file="file://$PROJECT_DIR$/src/com/amelie/Comparaison.java" />
     <entry file="file://$PROJECT_DIR$/src/com/amelie/Choixjoueur.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet3.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -356,73 +402,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/Duel.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/ResourceBundle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        <state relative-caret-position="6005">
+          <caret line="1688" column="16" selection-start-line="1688" selection-start-column="16" selection-end-line="1688" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/DeroulementJeu.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="657" column="48" selection-start-line="657" selection-start-column="48" selection-end-line="657" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/DeroulementJeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/JeuEntier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonctionnement/MethodesRepetitives.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/src/com/niveaux/Defenseur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/Challenge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/MethodesRepetitives.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/Defenseur.java">
+    <entry file="file://$PROJECT_DIR$/src/com/niveaux/Duel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/JeuEntier.java">
+    <entry file="file://$PROJECT_DIR$/src/ressources/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="119">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amelie/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/ressources/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/niveaux/Challenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

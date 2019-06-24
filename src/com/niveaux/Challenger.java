@@ -1,14 +1,17 @@
-package com.amelie;
+package com.niveaux;
+
+import ressources.Configuration;
+import com.fonctionnement.DeroulementJeu;
+import com.fonctionnement.MethodesRepetitives;
 
 import java.util.Scanner;
 
-public class Challenge implements DeroulementJeu{
+public class Challenger implements DeroulementJeu {
 
-    private static final String String = null;
     /*Valeurs reprises de la classe configuration*/
     static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurJeu();
-    int nbEssais = configuration.getNbEssais();
+    static int longueurNb = configuration.getLongueurNb();
+    static int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();
 
     /*Méthodes reprises de la classe methodesrepetitives*/
@@ -43,10 +46,10 @@ public class Challenge implements DeroulementJeu{
             nb = sc.nextLine();
             vf = true;
 
-            vf = methodesRepetitives.siEstUnNombreAQuatreChiffres(vf,nb);
+            vf = methodesRepetitives.siEstUnNombreAQuatreChiffres(vf, nb);
 
         }
-        while (vf == false || nb.length() != longueurNb );
+        while (vf == false || nb.length() != longueurNb);
 
         return nb;
     }
@@ -79,6 +82,5 @@ public class Challenge implements DeroulementJeu{
         return victoire;
 
     }
-
-
 }
+

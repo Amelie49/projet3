@@ -1,15 +1,14 @@
-package com.amelie;
+package com.fonctionnement;
 
 
-import java.util.Random;
-import java.util.Scanner;
+import ressources.Configuration;
 
 public class MethodesRepetitives {
 
     public Integer code;
 
     static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurJeu();
+    static int longueurNb = configuration.getLongueurNb();
     int nbEssais = configuration.getNbEssais();
     boolean modeDeveloppeur;
 

@@ -1,15 +1,18 @@
-package com.amelie;
+package com.niveaux;
 
 
-import java.util.Random;
+import ressources.Configuration;
+import com.fonctionnement.DeroulementJeu;
+import com.fonctionnement.MethodesRepetitives;
+
 import java.util.Scanner;
 
 public class Defenseur implements DeroulementJeu {
 
     /*Appeler valeur de la classe configuration*/
     static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurJeu();/*recuperer longueur du nb*/
-    int nbEssais = configuration.getNbEssais();/*recuperer nb essais*/
+    static int longueurNb = configuration.getLongueurNb();/*recuperer longueur du nb*/
+    static int nbEssais = configuration.getNbEssais();/*recuperer nb essais*/
     boolean modeDeveloppeur = configuration.getModeDeveloppeur();/*recuperer modedeveloppeur actif ou non */
 
     /*Appeler méthodes de la classe méthodesrépétitives*/

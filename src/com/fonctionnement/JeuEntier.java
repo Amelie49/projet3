@@ -1,5 +1,10 @@
-package com.amelie;
+package com.fonctionnement;
 
+
+import com.niveaux.Duel;
+import ressources.Configuration;
+import com.niveaux.Challenger;
+import com.niveaux.Defenseur;
 
 import java.util.Scanner;
 
@@ -8,9 +13,10 @@ public class JeuEntier {
     Configuration configuration = new Configuration();
     int nbEssais = configuration.getNbEssais();
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
-    Challenge challenge = new Challenge();
+    Challenger challenge = new Challenger();
     Defenseur defenseur = new Defenseur();
     Duel duel = new Duel();
+
 
 
     public void annoncerNiveaux() {/*annonce la règle du jeu et chaque niveau*/
@@ -32,9 +38,7 @@ public class JeuEntier {
     public String lancerNiveauSelectionne() { /* Afficher niveau sélectionné et lancer le niveau demandé*/
 
         String nbLevel;
-        Challenge challenge = new Challenge();
-        Defenseur defenseur = new Defenseur();
-        Duel duel = new Duel ();
+
         int i;
         String reponse;
 
