@@ -2,15 +2,13 @@ package com.main;
 
 
 import com.fonctionnement.JeuEntier;
-import com.niveaux.Challenger;
 
-
-public class Main{
+public class
+Main{
 
 
     public static void main(String[] args) {
 
-        Challenger challenge = new Challenger();
         JeuEntier jeuEntier = new JeuEntier();
 
 

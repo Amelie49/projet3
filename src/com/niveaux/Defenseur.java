@@ -1,11 +1,13 @@
 package com.niveaux;
 
 
+import org.apache.log4j.Logger;
 import ressources.Configuration;
 import com.fonctionnement.DeroulementJeu;
 import com.fonctionnement.MethodesRepetitives;
 
 import java.util.Scanner;
+
 
 public class Defenseur implements DeroulementJeu {
 
@@ -17,6 +19,7 @@ public class Defenseur implements DeroulementJeu {
 
     /*Appeler méthodes de la classe méthodesrépétitives*/
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
+    final static Logger log = Logger.getLogger(Defenseur.class);
 
 
     public String nbMystere() {/*Demande au joueur la saisie du nombre que l'ordinateur doit deviner et controle le format*/
@@ -26,7 +29,7 @@ public class Defenseur implements DeroulementJeu {
         int i = 0;
 
         do {/*Vérifie si bien un int à 4 chiffres*/
-            System.out.println("Combinaison secrète de l'Ordinateur : ");
+            log.info("Combinaison secrète de l'Ordinateur : ");
 
             Scanner sc = new Scanner(System.in);
             nb = sc.nextLine();/*demander une saisie au joueur*/
@@ -81,18 +84,18 @@ public class Defenseur implements DeroulementJeu {
         boolean victoireNiveau = false;
 
 
-        System.out.println("Proposition ordinateur : " + nbOrdi);/*affiche la valeur que l'ordinateur propose*/
+        log.info("Proposition ordinateur : " + nbOrdi);/*affiche la valeur que l'ordinateur propose*/
 
         for (k = 1; victoireNiveau == false && k <= nbEssais; k++) {
 
             resultcomp = methodesRepetitives.compare(nbJoueur, nbOrdi);//*compare la valeur de l'ordinateur avec celle du joueur*/
-            System.out.println(" -> Réponse Ordinateur : " + resultcomp);/* affiche les symboles de comparaion*/
+            log.info(" -> Réponse Ordinateur : " + resultcomp);/* affiche les symboles de comparaion*/
 
             if (resultcomp.equals("====")) {/*si les symboles correspondent a ==== alors victoire correspond a vrai*/
                 victoireNiveau = true;
             } else if (k < nbEssais) {/*si le nb d'essais final n'est pas atteind, redemander un nb a l'ordinateur et relancer la comparaison*/
                 nbOrdi = ajuste(nbOrdi, resultcomp);
-                System.out.println("Proposition Ordinateur : " + nbOrdi);
+                log.info("Proposition Ordinateur : " + nbOrdi);
             }
         }
         if (victoireNiveau == true)/*si l'ordinateur trouve le code le joueur a perdu sinon il a gagne*/

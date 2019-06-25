@@ -1,5 +1,7 @@
 package com.niveaux;
 
+import com.fonctionnement.JeuEntier;
+import org.apache.log4j.Logger;
 import ressources.Configuration;
 import com.fonctionnement.DeroulementJeu;
 import com.fonctionnement.MethodesRepetitives;
@@ -16,6 +18,7 @@ public class Challenger implements DeroulementJeu {
 
     /*Méthodes reprises de la classe methodesrepetitives*/
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
+    final static Logger log = Logger.getLogger(Challenger.class);
 
 
     public String nbMystere() {
@@ -27,7 +30,7 @@ public class Challenger implements DeroulementJeu {
 
         /*Afficher nb mystere selon mode developpeur actif ou non*/
         if (modeDeveloppeur = true) {
-            System.out.println("Combinaison secrète du Joueur : " + nbInconnu);
+            log.info("Combinaison secrète du Joueur : " + nbInconnu);
         } else {
         }
         return nbInconnu;
@@ -40,7 +43,7 @@ public class Challenger implements DeroulementJeu {
         boolean vf;
 
         do { /*Vérifier si la saisie du joueur est bien un nombre à 4 chiffres*/
-            System.out.println("Proposition Joueur :");
+           log.info("Proposition Joueur :");
 
             Scanner sc = new Scanner(System.in);
             nb = sc.nextLine();
@@ -68,7 +71,7 @@ public class Challenger implements DeroulementJeu {
 
         for (k = 1; victoire == false && k <= nbEssais; k++) {/*une boucle qui tourne tant que le joueur n'a pas trouve le nb, et tant qu'on a pas atteind le nb limite d'essais*/
             resultcomp = methodesRepetitives.compare(nbOrdi, nbJoueur);/*lancer la comparaison des valeur*/
-            System.out.println(" -> Réponse Joueur : " + resultcomp);/*afficher les symboles de comparaison*/
+            log.info(" -> Réponse Joueur : " + resultcomp);/*afficher les symboles de comparaison*/
 
             if (resultcomp.equals("====")) {/*si la saisie du joueur correspond au nb mystere alors victoire */
                 victoire = true;
@@ -77,7 +80,7 @@ public class Challenger implements DeroulementJeu {
             }
 
         }
-        System.out.println("Le nombre mystère est : " + nbOrdi);/*arrivee au dernier essai afficher le nb qu'il fallait trouver*/
+        log.info("Le nombre mystère est : " + nbOrdi);/*arrivee au dernier essai afficher le nb qu'il fallait trouver*/
 
         return victoire;
 

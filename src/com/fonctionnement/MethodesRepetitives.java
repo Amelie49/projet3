@@ -1,6 +1,7 @@
 package com.fonctionnement;
 
 
+import org.apache.log4j.Logger;
 import ressources.Configuration;
 
 public class MethodesRepetitives {
@@ -18,6 +19,9 @@ public class MethodesRepetitives {
     boolean vf;
     String reponse;
     String codeJoueur;
+
+    final static Logger log = Logger.getLogger(MethodesRepetitives.class);
+
 
 
     /** Générer le code aléatoire en int
@@ -48,9 +52,9 @@ public class MethodesRepetitives {
         }
 
         if(vf==false) {
-            System.out.println("Vous n'avez pas saisi un nombre. Recommencez");
+            log.debug("Vous n'avez pas saisi un nombre. Recommencez");
         } else if (nb.length() != longueurNb) {
-            System.out.println("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
+            log.debug("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
         }
 
         return vf;
@@ -87,10 +91,10 @@ public class MethodesRepetitives {
 
 
         if(victoire == true)
-            System.out.println("Bravo ! vous avez gagné !!!");
+            log.info("Bravo ! vous avez gagné !!!");
 
         else
-            System.out.println("Dommage, vous avez perdu !!!");
+            log.info("Dommage, vous avez perdu !!!");
 
     }
 

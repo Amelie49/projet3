@@ -1,5 +1,6 @@
 package com.niveaux;
 
+import org.apache.log4j.Logger;
 import ressources.Configuration;
 import com.fonctionnement.MethodesRepetitives;
 
@@ -11,6 +12,7 @@ public class Duel {
     Defenseur defenseur = new Defenseur();
 
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
+    final static Logger log = Logger.getLogger(Duel.class);
 
     public boolean jeu() {  /*Permet de lancer le mode duel selon les modes defenseur et challenge*/
         int l;
@@ -24,16 +26,16 @@ public class Duel {
         String mystJoueur = challenge.nbMystere();   /*nb que le joueur doit trouver*/
         String mystOrdi = defenseur.nbMystere();       /*nb que l'ordinateur doit trouver*/
         String propOrdi = defenseur.proposition();  /*ordinateur genere un code aleatoire en premiere proposition*/
-        System.out.println("Proposition ordinateur : " + propOrdi);   /*afficher proposition ordinateur*/
+        log.info("Proposition ordinateur : " + propOrdi);   /*afficher proposition ordinateur*/
         String propJoueur = "";
 
         for (l = 1; victoireJoueur == false && victoireOrdi == false && l <= nbEssais; l++) {   /*si ni le joueur ou l'ordinateur n'ont gagne et si le nombre d'essais n'est pas atteind, relancer*/
 
             compOrdi = methodesRepetitives.compare(mystOrdi, propOrdi); /*lancer la methode de comparaison du niveau defenseur*/
-            System.out.println("Reponse Ordinateur :" + compOrdi);  /*afficher la comparaison*/
+            log.info("Reponse Ordinateur :" + compOrdi);  /*afficher la comparaison*/
             propJoueur = challenge.proposition();    /*demander une saisie au joueur selon le mode challenger*/
             compJoueur = methodesRepetitives.compare(mystJoueur, propJoueur); /*comparer selon le mode challenger*/
-            System.out.println("Reponse Joueur :" + compJoueur);   /*afficher la comparaison*/
+            log.info("Reponse Joueur :" + compJoueur);   /*afficher la comparaison*/
 
             if (compOrdi.equals("====")) { /*si l'ordinateur a gagne, changement de la valeur victoireOrdi*/
                 victoireOrdi = true;
@@ -41,7 +43,7 @@ public class Duel {
                 victoireJoueur = true;
             } else if (l < nbEssais) {  /*sinon redemander un code a l'ordinateur selon les symboles de comparaison*/
                 propOrdi = defenseur.ajuste(propOrdi, compOrdi);
-                System.out.println("Proposition Ordinateur :" + propOrdi);
+                log.info("Proposition Ordinateur :" + propOrdi);
             }
         }
 
