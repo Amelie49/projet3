@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="305cea47-f0d8-4b55-a206-a4c65bd94fec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/projet3_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/log4j.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet3/com/fonctionnement/JeuEntier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet3/com/fonctionnement/JeuEntier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet3/com/fonctionnement/MethodesRepetitives.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet3/com/fonctionnement/MethodesRepetitives.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet3/com/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet3/com/main/Main.class" afterDir="false" />
@@ -200,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -376,7 +379,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.64846414" visible="true" weight="0.32713348" />
       <window_info id="Structure" order="1" sideWeight="0.35153583" side_tool="true" visible="true" weight="0.32713348" />
