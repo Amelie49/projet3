@@ -12,10 +12,10 @@ import java.util.Scanner;
 public class Defenseur implements DeroulementJeu {
 
     /*Appeler valeur de la classe configuration*/
-    static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurNb();/*recuperer longueur du nb*/
-    static int nbEssais = configuration.getNbEssais();/*recuperer nb essais*/
-    boolean modeDeveloppeur = configuration.getModeDeveloppeur();/*recuperer modedeveloppeur actif ou non */
+    final static Configuration configuration = new Configuration();
+    final static int longueurNb = configuration.getLongueurNb();/*recuperer longueur du nb*/
+    final static int nbEssais = configuration.getNbEssais();/*recuperer nb essais*/
+    final static boolean modeDeveloppeur = configuration.getModeDeveloppeur();/*recuperer modedeveloppeur actif ou non */
 
     /*Appeler méthodes de la classe méthodesrépétitives*/
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
@@ -35,7 +35,7 @@ public class Defenseur implements DeroulementJeu {
             nb = sc.nextLine();/*demander une saisie au joueur*/
             vf = true;
 
-            vf = methodesRepetitives.siEstUnNombreAQuatreChiffres(vf, nb);
+            vf = methodesRepetitives.siEstUnNombreABonNombreDeChiffres(vf, nb);
 
         }
         while (vf == false || nb.length() != longueurNb);/*si pas un int à 4 chiffres redemande au joueur de saisir un nombre*/
@@ -82,23 +82,28 @@ public class Defenseur implements DeroulementJeu {
         String nbJoueur = nbMystere();/*demande au joueur de saisir le nb que l'ordinateur doit trouver*/
         String nbOrdi = proposition();/*valeur aleatoire donnee par l'ordinateur*/
         boolean victoireNiveau = false;
-
+        boolean victoireOrdi = false;
+        String goodResult = "=";
 
         log.info("Proposition ordinateur : " + nbOrdi);/*affiche la valeur que l'ordinateur propose*/
 
-        for (k = 1; victoireNiveau == false && k <= nbEssais; k++) {
+        for (k=1;k<nbEssais;k++){
+            goodResult = goodResult + "=";
+        }
+
+        for (k = 1; victoireOrdi == false && k <= nbEssais; k++) {
 
             resultcomp = methodesRepetitives.compare(nbJoueur, nbOrdi);//*compare la valeur de l'ordinateur avec celle du joueur*/
             log.info(" -> Réponse Ordinateur : " + resultcomp);/* affiche les symboles de comparaion*/
 
-            if (resultcomp.equals("====")) {/*si les symboles correspondent a ==== alors victoire correspond a vrai*/
-                victoireNiveau = true;
+            if (resultcomp.equals(goodResult)) {/*si les symboles correspondent a ==== alors victoire correspond a vrai*/
+                victoireOrdi = true;
             } else if (k < nbEssais) {/*si le nb d'essais final n'est pas atteind, redemander un nb a l'ordinateur et relancer la comparaison*/
                 nbOrdi = ajuste(nbOrdi, resultcomp);
                 log.info("Proposition Ordinateur : " + nbOrdi);
             }
         }
-        if (victoireNiveau == true)/*si l'ordinateur trouve le code le joueur a perdu sinon il a gagne*/
+        if (victoireOrdi == true)/*si l'ordinateur trouve le code le joueur a perdu sinon il a gagne*/
             victoireNiveau = false;
         else
             victoireNiveau = true;

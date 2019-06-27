@@ -12,8 +12,8 @@ import java.util.Scanner;
 
 public class JeuEntier {
 
-    Configuration configuration = new Configuration();
-    int nbEssais = configuration.getNbEssais();
+    final static Configuration configuration = new Configuration();
+    final static int nbEssais = configuration.getNbEssais();
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
     Challenger challenge = new Challenger();
     Defenseur defenseur = new Defenseur();
@@ -93,11 +93,11 @@ final static Logger log = Logger.getLogger(JeuEntier.class);
             if (!reponse.equals ("1") && !reponse.equals ("2") && !reponse.equals ("3")) {
                 log.debug("Vous n'avez pas saisi un caractère valide !");/*si valeur non valide*/
             }else if (reponse.equals("1") && niveau.equals("1")) {/*si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 1*/
-                challenge.jeu();
+                methodesRepetitives.vainqueurOuPerdant(challenge.jeu());
             }else if (reponse.equals("1") && niveau.equals("2")) {/*si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 2*/
-                defenseur.jeu();
+                methodesRepetitives.vainqueurOuPerdant(defenseur.jeu());
             }else if (reponse.equals("1") && niveau.equals("3")) {/*si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 3*/
-                duel.jeu();
+                methodesRepetitives.vainqueurOuPerdant(duel.jeu());
             }else if (reponse.equals("2")) {/*si le joueur souhaite rejouer un autre niveau*/
                 lancerNiveauSelectionne();
             }else if(reponse.equals("3")) {/*si le joueur souhaite quitter*/

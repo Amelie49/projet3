@@ -3,8 +3,7 @@ package com.main;
 
 import com.fonctionnement.JeuEntier;
 
-public class
-Main{
+public class Main{
 
 
     public static void main(String[] args) {

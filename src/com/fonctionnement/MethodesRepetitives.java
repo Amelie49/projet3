@@ -8,10 +8,9 @@ public class MethodesRepetitives {
 
     public Integer code;
 
-    static Configuration configuration = new Configuration();
-    static int longueurNb = configuration.getLongueurNb();
-    int nbEssais = configuration.getNbEssais();
-    boolean modeDeveloppeur;
+    final static Configuration configuration = new Configuration();
+    final static int longueurNb = configuration.getLongueurNb();
+    final static int nbEssais = configuration.getNbEssais();
 
     int i;
     String nbPc;
@@ -34,9 +33,9 @@ public class MethodesRepetitives {
         double d;
         String nbInconnu = new String();
 
-        for (i=0;i<4;i++) {
+        for (i=0;i<longueurNb;i++) {
 
-            n = (int)(Math.random()*5);
+            n = (int)(Math.random()*10);
             res = String.valueOf(n);
             nbInconnu = nbInconnu + res;
         }
@@ -46,7 +45,7 @@ public class MethodesRepetitives {
 
     /** Savoir si la saisie correspond bien à un nombre
      */
-    public boolean siEstUnNombreAQuatreChiffres (boolean vf, String nb) {
+    public boolean siEstUnNombreABonNombreDeChiffres (boolean vf, String nb) {
         for(i=0;vf==true && i < nb.length();i++) {
             vf = Character.isDigit(nb.charAt(i));
         }
