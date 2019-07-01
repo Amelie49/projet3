@@ -83,13 +83,9 @@ public class Defenseur implements DeroulementJeu {
         String nbOrdi = proposition();/*valeur aleatoire donnee par l'ordinateur*/
         boolean victoireNiveau = false;
         boolean victoireOrdi = false;
-        String goodResult = "=";
+        String goodResult = methodesRepetitives.goodResult();
 
         log.info("Proposition ordinateur : " + nbOrdi);/*affiche la valeur que l'ordinateur propose*/
-
-        for (k=1;k<nbEssais;k++){
-            goodResult = goodResult + "=";
-        }
 
         for (k = 1; victoireOrdi == false && k <= nbEssais; k++) {
 

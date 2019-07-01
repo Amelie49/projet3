@@ -830,3 +830,50 @@
 2019-06-27 18:54:41 INFO  JeuEntier:85 - Si vous souhaitez rejouer au même niveau tapez 1
 2019-06-27 18:54:41 INFO  JeuEntier:86 - Si vous souhaitez rejouer à un autre niveau tapez 2
 2019-06-27 18:54:41 INFO  JeuEntier:87 - Si vous souhaitez quitter le jeu tapez 3
+2019-06-27 19:09:04 INFO  JeuEntier:29 - Votre mission si vous l'acceptez est de sortir de cette pièce.
+2019-06-27 19:09:04 INFO  JeuEntier:30 - Pour celà vous devez vaincre l'ordinateur.
+2019-06-27 19:09:04 INFO  JeuEntier:31 - Vous avez 4 essais. Passé ce nombre, vous aurez perdu.
+2019-06-27 19:09:04 INFO  JeuEntier:32 - Vous avez le choix entre différents mode : challenge, défenseur et duel.
+2019-06-27 19:09:04 INFO  JeuEntier:33 - Choix du niveau
+2019-06-27 19:09:04 INFO  JeuEntier:34 - 1- challenge : vous devez deviner le code secret de l'ordinateur
+2019-06-27 19:09:04 INFO  JeuEntier:35 - 2- défenseur : l'ordinateur va à son tour essayer de deviner votre code
+2019-06-27 19:09:04 INFO  JeuEntier:36 - 3- duel : vous devez deviner le code de l'ordinateur avant que celui-ci ne devine le votre
+2019-06-27 19:09:04 INFO  JeuEntier:48 - Quel niveau choisissez-vous ?
+2019-06-27 19:09:07 INFO  JeuEntier:55 - Vous avez choisi le niveau challenge
+2019-06-27 19:09:07 INFO  Challenger:34 - Combinaison secrète du Joueur : 4654
+2019-06-27 19:09:07 INFO  Challenger:47 - Proposition Joueur :
+2019-06-27 19:09:08 INFO  Challenger:81 -  -> Réponse Joueur : >><<
+2019-06-27 19:09:08 INFO  Challenger:47 - Proposition Joueur :
+2019-06-27 19:09:12 INFO  Challenger:81 -  -> Réponse Joueur : ====
+2019-06-27 19:09:12 INFO  Challenger:90 - Le nombre mystère est : 4654
+2019-06-27 19:09:12 INFO  MethodesRepetitives:93 - Bravo ! vous avez gagné !!!
+2019-06-27 19:09:12 INFO  JeuEntier:85 - Si vous souhaitez rejouer au même niveau tapez 1
+2019-06-27 19:09:12 INFO  JeuEntier:86 - Si vous souhaitez rejouer à un autre niveau tapez 2
+2019-06-27 19:09:12 INFO  JeuEntier:87 - Si vous souhaitez quitter le jeu tapez 3
+2019-07-01 18:49:24 INFO  JeuEntier:29 - Votre mission si vous l'acceptez est de sortir de cette pièce.
+2019-07-01 18:49:24 INFO  JeuEntier:30 - Pour celà vous devez vaincre l'ordinateur.
+2019-07-01 18:49:24 INFO  JeuEntier:31 - Vous avez 4 essais. Passé ce nombre, vous aurez perdu.
+2019-07-01 18:49:24 INFO  JeuEntier:32 - Vous avez le choix entre différents mode : challenge, défenseur et duel.
+2019-07-01 18:49:24 INFO  JeuEntier:33 - Choix du niveau
+2019-07-01 18:49:24 INFO  JeuEntier:34 - 1- challenge : vous devez deviner le code secret de l'ordinateur
+2019-07-01 18:49:24 INFO  JeuEntier:35 - 2- défenseur : l'ordinateur va à son tour essayer de deviner votre code
+2019-07-01 18:49:24 INFO  JeuEntier:36 - 3- duel : vous devez deviner le code de l'ordinateur avant que celui-ci ne devine le votre
+2019-07-01 18:49:24 INFO  JeuEntier:48 - Quel niveau choisissez-vous ?
+2019-07-01 18:49:27 INFO  JeuEntier:55 - Vous avez choisi le niveau challenge
+2019-07-01 18:49:27 INFO  Challenger:34 - Combinaison secrète du Joueur : 0638
+2019-07-01 18:49:27 INFO  Challenger:47 - Proposition Joueur :
+2019-07-01 18:49:29 INFO  Challenger:77 -  -> Réponse Joueur : ====
+2019-07-01 18:49:29 INFO  Challenger:86 - Le nombre mystère est : 0638
+2019-07-01 18:49:29 INFO  MethodesRepetitives:102 - Bravo ! vous avez gagné !!!
+2019-07-01 18:49:29 INFO  JeuEntier:85 - Si vous souhaitez rejouer au même niveau tapez 1
+2019-07-01 18:49:29 INFO  JeuEntier:86 - Si vous souhaitez rejouer à un autre niveau tapez 2
+2019-07-01 18:49:29 INFO  JeuEntier:87 - Si vous souhaitez quitter le jeu tapez 3
+2019-07-01 18:49:33 INFO  Challenger:34 - Combinaison secrète du Joueur : 2369
+2019-07-01 18:49:33 INFO  Challenger:47 - Proposition Joueur :
+2019-07-01 18:49:39 INFO  Challenger:77 -  -> Réponse Joueur : ====
+2019-07-01 18:49:39 INFO  Challenger:86 - Le nombre mystère est : 2369
+2019-07-01 18:49:39 INFO  MethodesRepetitives:102 - Bravo ! vous avez gagné !!!
+2019-07-01 18:49:39 INFO  JeuEntier:85 - Si vous souhaitez rejouer au même niveau tapez 1
+2019-07-01 18:49:39 INFO  JeuEntier:86 - Si vous souhaitez rejouer à un autre niveau tapez 2
+2019-07-01 18:49:39 INFO  JeuEntier:87 - Si vous souhaitez quitter le jeu tapez 3
+2019-07-01 18:49:44 INFO  JeuEntier:104 - Au revoir ! et à Bientôt !

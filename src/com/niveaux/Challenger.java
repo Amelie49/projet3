@@ -68,11 +68,7 @@ public class Challenger implements DeroulementJeu {
         String nbOrdi = nbMystere();/*definir nb a trouver*/
         String nbJoueur = proposition();/*demande au joueur de saisir un nombre*/
         boolean victoire = false;
-        String goodResult = "=";
-
-        for (k=1;k<nbEssais;k++){
-            goodResult = goodResult + "=";
-        }
+        String goodResult = methodesRepetitives.goodResult();
 
 
 

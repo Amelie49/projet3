@@ -28,11 +28,8 @@ public class Duel {
         String propOrdi = defenseur.proposition();  /*ordinateur genere un code aleatoire en premiere proposition*/
         log.info("Proposition ordinateur : " + propOrdi);   /*afficher proposition ordinateur*/
         String propJoueur = "";
-        String goodResult = "=";
+        String goodResult = methodesRepetitives.goodResult();
 
-        for (k=1;k<nbEssais;k++){
-            goodResult = goodResult + "=";
-        }
 
         for (k = 1; victoireJoueur == false && victoireOrdi == false && k <= nbEssais; k++) {   /*si ni le joueur ou l'ordinateur n'ont gagne et si le nombre d'essais n'est pas atteind, relancer*/
 

@@ -82,6 +82,15 @@ public class MethodesRepetitives {
     }
 
 
+    public String goodResult(){
+        int k;
+        String goodResult = "=";
+        for (k=1;k<nbEssais;k++){
+            goodResult = goodResult + "=";
+        }
+        return goodResult;
+    }
+
     /** Afficher si le joueur à gagner ou perdu
      */
 
