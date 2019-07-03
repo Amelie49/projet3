@@ -8,9 +8,8 @@ public class MethodesRepetitives {
 
     public Integer code;
 
-    final static Configuration configuration = new Configuration();
-    final static int longueurNb = configuration.getLongueurNb();
-    final static int nbEssais = configuration.getNbEssais();
+    final static int longueurNb = Configuration.getLongueurNb();
+    final static int nbEssais = Configuration.getNbEssais();
 
     int i;
     String nbPc;
@@ -25,7 +24,7 @@ public class MethodesRepetitives {
 
     /** Générer le code aléatoire en int
      */
-    public String genererCodeAleatoire(){
+    public static String genererCodeAleatoire(){
 
         int i;
         String res = new String();
@@ -45,26 +44,29 @@ public class MethodesRepetitives {
 
     /** Savoir si la saisie correspond bien à un nombre
      */
-    public boolean siEstUnNombreABonNombreDeChiffres (boolean vf, String nb) {
-        for(i=0;vf==true && i < nb.length();i++) {
+    public static boolean siEstUnNombreABonNombreDeChiffres (boolean vf, String nb) {
+        int i;
+
+        if (nb.length() != longueurNb)
+            log.debug("Vous n'avez pas saisi un nombre à " + longueurNb +  "chiffres. Recommencez");
+
+        for(i=0;vf && i < nb.length();i++) {
             vf = Character.isDigit(nb.charAt(i));
         }
 
-        if(vf==false) {
+        if(!vf)
             log.debug("Vous n'avez pas saisi un nombre. Recommencez");
-        } else if (nb.length() != longueurNb) {
-            log.debug("Vous n'avez pas saisi un nombre à 4 chiffres. Recommencez");
-        }
 
         return vf;
     }
 
 
-    public String compare(String nb1, String nb2) {
+    /**Comparer chaque chiffre du nombre*/
+    public static String compare(String nb1, String nb2) {
         String comp = new String();
         int j;
 
-        for (j = 0; j < longueurNb; j++) {/*Comparer chaque chiffre du nombre*/
+        for (j = 0; j < longueurNb; j++) {
 
             if (nb1.charAt(j) > nb2.charAt(j)) {
                 comp = comp + ">";
@@ -75,30 +77,26 @@ public class MethodesRepetitives {
             } else {
                 comp = comp + "=";
             }
-
+        }
+            return comp;
         }
 
-        return comp;
-    }
 
-
-    public String goodResult(){
-        int k;
-        String goodResult = "=";
-        for (k=1;k<nbEssais;k++){
-            goodResult = goodResult + "=";
+    /**Génère les symboles que doit prendre la méthode compare pour gagner*/
+        public static String bonResultat () {
+            int k;
+            String goodResult = "=";
+            for (k = 1; k < nbEssais; k++) {
+                goodResult = goodResult + "=";
+            }
+            return goodResult;
         }
-        return goodResult;
-    }
-
-    /** Afficher si le joueur à gagner ou perdu
-     */
 
 
-    public void vainqueurOuPerdant (boolean victoire) {
+        /** Afficher si le joueur à gagner ou perdu*/
+    public static void vainqueurOuPerdant (boolean victoire) {
 
-
-        if(victoire == true)
+        if(victoire)
             log.info("Bravo ! vous avez gagné !!!");
 
         else
