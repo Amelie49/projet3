@@ -12,10 +12,13 @@ public class Main{
         JeuEntier jeuEntier = new JeuEntier();
 
         /**afficher la regle du jeu*/
+jeuEntier.annoncerRegleJeu();
+
+        /**afficher les niveaux*/
         jeuEntier.annoncerNiveaux();
 
         /**lancer le jeu avec tous les niveaux et si le joueur souhaite rejouer*/
-        jeuEntier.rejouer(jeuEntier.lancerNiveauSelectionne());
+        jeuEntier.rejouer();
     }
 }
 

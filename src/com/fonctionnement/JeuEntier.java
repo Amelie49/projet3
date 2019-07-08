@@ -20,14 +20,17 @@ public class JeuEntier {
 final static Logger log = Logger.getLogger(JeuEntier.class);
 
     /**annonce la règle du jeu et chaque niveau*/
-    public void annoncerNiveaux() {
+    public void annoncerRegleJeu() {
 
         log.info("Votre mission si vous l'acceptez est de sortir de cette pièce.");
         log.info("Pour celà vous devez vaincre l'ordinateur.");
-        log.info("Vous avez "  + nbEssais + " essais. Passé ce nombre, vous aurez perdu.");
-        log.info("Vous avez le choix entre différents mode : challenge, défenseur et duel.");
+        log.info("Vous avez " + nbEssais + " essais. Passé ce nombre, vous aurez perdu.");
+    }
+
+    public void annoncerNiveaux(){
+        log.info("Vous avez le choix entre différents mode : challenger, défenseur et duel.");
         log.info("Choix du niveau");
-        log.info("1- challenge : vous devez deviner le code secret de l'ordinateur");
+        log.info("1- challenger : vous devez deviner le code secret de l'ordinateur");
         log.info("2- défenseur : l'ordinateur va à son tour essayer de deviner votre code");
         log.info("3- duel : vous devez deviner le code de l'ordinateur avant que celui-ci ne devine le votre");
     }
@@ -48,14 +51,14 @@ final static Logger log = Logger.getLogger(JeuEntier.class);
         switch (nbLevel) {
 
             case "1":/**si le joueur choisi le niveau 1, lancer le niveau challenger*/
-                log.info("Vous avez choisi le niveau challenge");
+                log.info("Vous avez choisi le niveau challenger");
                 MethodesRepetitives.vainqueurOuPerdant(challenger.jeu());
                 break;
-            case "2":/**si le joueur choisi le niveau 2, lancer le niveau challenger*/
+            case "2":/**si le joueur choisi le niveau 2, lancer le niveau defenseur*/
                 log.info("Vous avez choisi le niveau défenseur");
                 MethodesRepetitives.vainqueurOuPerdant(defenseur.jeu());
                 break;
-            case "3":/**si le joueur choisi le niveau 3, lancer le niveau challenger*/
+            case "3":/**si le joueur choisi le niveau 3, lancer le niveau duel*/
                 log.info("Vous avez choisi le niveau duel");
                 MethodesRepetitives.vainqueurOuPerdant(duel.jeu());
                 break;
@@ -73,9 +76,10 @@ final static Logger log = Logger.getLogger(JeuEntier.class);
 
 
     /** Demander au joueur s'il souhaite rejouer*/
-    public String rejouer(String niveau) {
+    public String rejouer() {
 
         String reponse;
+        String niveau = lancerNiveauSelectionne();
 
         do {
             log.info("Si vous souhaitez rejouer au même niveau tapez 1");
@@ -89,13 +93,17 @@ final static Logger log = Logger.getLogger(JeuEntier.class);
             if (!reponse.equals ("1") && !reponse.equals ("2") && !reponse.equals ("3")) {
                 log.debug("Vous n'avez pas saisi un caractère valide !");/**si valeur non valide*/
             }else if (reponse.equals("1") && niveau.equals("1")) {/**si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 1*/
+                log.info("1- challenger : vous devez deviner le code secret de l'ordinateur");
                 MethodesRepetitives.vainqueurOuPerdant(challenger.jeu());
             }else if (reponse.equals("1") && niveau.equals("2")) {/**si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 2*/
+                log.info("2- défenseur : l'ordinateur va à son tour essayer de deviner votre code");
                 MethodesRepetitives.vainqueurOuPerdant(defenseur.jeu());
             }else if (reponse.equals("1") && niveau.equals("3")) {/**si le joueur choisi de relancer le meme niveau et qu'il s'agit du niveau 3*/
+                log.info("3- duel : vous devez deviner le code de l'ordinateur avant que celui-ci ne devine le votre");
                 MethodesRepetitives.vainqueurOuPerdant(duel.jeu());
             }else if (reponse.equals("2")) {/**si le joueur souhaite rejouer un autre niveau*/
-                lancerNiveauSelectionne();
+                annoncerNiveaux();
+            niveau = lancerNiveauSelectionne();
             }else if(reponse.equals("3")) {/**si le joueur souhaite quitter*/
                 log.info("Au revoir ! et à Bientôt !");
             }

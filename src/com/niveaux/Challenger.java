@@ -38,7 +38,6 @@ public class Challenger implements DeroulementJeu {
         String nb;
         int i = 0;
         boolean vf;
-
         do {
             log.info("Proposition Joueur :");
 

@@ -14,12 +14,10 @@ public class Defenseur implements DeroulementJeu {
     /**Appeler valeur de la classe configuration*/
     final static int longueurNb = Configuration.getLongueurNb();/**recuperer longueur du nb*/
     final static int nbEssais = Configuration.getNbEssais();/**recuperer nb essais*/
-    final static boolean modeDeveloppeur = Configuration.getModeDeveloppeur();/**recuperer modedeveloppeur actif ou non */
 
     /**Appeler méthodes de la classe méthodesrépétitives*/
     MethodesRepetitives methodesRepetitives = new MethodesRepetitives();
     final static Logger log = Logger.getLogger(Defenseur.class);
-
 
     /**Demande au joueur la saisie du nombre que l'ordinateur doit deviner et controle le format*/
     public String nbMystere() {
@@ -63,6 +61,7 @@ public class Defenseur implements DeroulementJeu {
                 res = res + (char) (nb.charAt(i) + 1);
 
             } else if (compare.charAt(i) == '<') {
+
                 res = res + (char) (nb.charAt(i) - 1);
 
             } else {
@@ -89,7 +88,7 @@ public class Defenseur implements DeroulementJeu {
 
         for (k = 1; !victoireOrdi && k <= nbEssais; k++) {
 
-            resultcomp = methodesRepetitives.compare(nbJoueur, nbOrdi);//**compare la valeur de l'ordinateur avec celle du joueur*/
+            resultcomp = methodesRepetitives.compare(nbJoueur, nbOrdi);/**compare la valeur de l'ordinateur avec celle du joueur*/
             log.info(" -> Réponse Ordinateur : " + resultcomp);/** affiche les symboles de comparaion*/
 
             if (resultcomp.equals(goodResult)) {/**si les symboles correspondent a ==== alors victoire correspond a vrai*/
